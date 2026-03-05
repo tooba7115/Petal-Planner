@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile - Planner</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+<header class="header">
+  <nav class="nav">
+
+    <a href="{{ url_for('profile') }}" class="brand">
+      <span class="brand-avatar">
+        {% if current_user.is_authenticated %}
+          {{ current_user.avatar_emoji }}
+        {% else %}
+          👤
+        {% endif %}
+      </span>
+      <span class="brand-text">My Planner</span>
+    </a>
+
+    <div class="nav-left">
+      <a href="/dashboard" class="nav-link active">Home</a>
+      <a href="/create" class="nav-link">Create Task</a>
+      <a href="/history" class="nav-link">History</a>
+    </div>
+
+    <div class="nav-right">
+      <button type="button" class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+        🌙
+      </button>
+
+      <span class="user-badge">
+            👋 {{ current_user.username }}
+        </span>
+
+      <a href="https://www.instagram.com/tooba.__.07" class="social" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.tiktok.com" class="social" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-tiktok"></i>
+      </a>
+      <a href="https://github.com/tooba7115" class="social" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-github"></i>
+      </a>
+
+      <a href="/logout" class="logout-btn">Logout</a>
+    </div>
+  </nav>
+</header>
+
+<main class="create-page">
+  <div class="create-wrapper">
+    <h2 class="create-title">Your Profile</h2>
+
+    {% if error %}<div class="error-box">{{ error }}</div>{% endif %}
+    {% if success %}<div class="success-box">{{ success }}</div>{% endif %}
+
+    <form method="POST">
+        <label class="small-label">Choose your avatar</label>
+        <select name="avatar_emoji" class="create-input">
+            {% for e in ["👤","🌸","🍒","⭐","🌙","💗","🧠","🧁","🫧","🔆", "🦋"] %}
+                <option value="{{ e }}" {% if current_user.avatar_emoji == e %}selected{% endif %}>
+                    {{ e }}
+                </option>
+            {% endfor %}
+        </select>
+
+      <input class="create-input" type="text" name="username" value="{{ current_user.username }}" placeholder="Username" required>
+      <input class="create-input" type="email" name="email" value="{{ current_user.email }}" placeholder="Email" required>
+
+      <hr class="soft-divider">
+
+      <p class="small-label">Change password (optional)</p>
+      <input class="create-input" type="password" name="current_password" placeholder="Current password">
+      <input class="create-input" type="password" name="new_password" placeholder="New password">
+      <input class="create-input" type="password" name="confirm_new_password" placeholder="Confirm new password">
+
+      <button type="submit" class="save-task-btn">Save Changes</button>
+    </form>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-center">
+    <div class="footer-left">
+      <p>© 2025 My Planner</p>
+      <span>Made with ☕ & ✨</span>
+    </div>
+    <div class="footer-links">
+      <a href="/about">About</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – My Planner</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='contact_style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header class="header">
+  <nav class="nav">
+    <a href="/dashboard" class="brand">
+      <span class="brand-avatar">📝</span>
+      <span class="brand-text">My Planner</span>
+    </a>
+
+    <div class="nav-left">
+      <a href="/dashboard" class="nav-link">Home</a>
+      <a href="/create" class="nav-link">Create Task</a>
+      <a href="/history" class="nav-link">History</a>
+      <a href="/contact" class="nav-link active">Contact</a>
+    </div>
+
+    <div class="nav-right">
+      <span class="user-badge">👋 {{ current_user.username }}</span>
+      <a href="/logout" class="logout-btn">Logout</a>
+    </div>
+  </nav>
+</header>
+
+<main class="contact-page">
+  <div class="contact-card">
+
+    <h2 class="contact-title">📬 Contact Me</h2>
+    <p class="contact-subtitle">
+      Found a bug? Have a cute idea? Send me a message 💖
+    </p>
+
+    <form class="contact-form">
+      <div class="pixel-field">
+        <label>Name</label>
+        <input type="text" placeholder="Your name" required>
+      </div>
+
+      <div class="pixel-field">
+        <label>Email</label>
+        <input type="email" placeholder="you@example.com" required>
+      </div>
+
+      <div class="pixel-field">
+        <label>Message</label>
+        <textarea rows="4" placeholder="Type your message here ✨" required></textarea>
+      </div>
+
+      <button type="submit" class="pixel-btn">
+        💌 Send Message
+      </button>
+    </form>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-center">
+    <div class="footer-left">
+      <p>© 2025 My Planner</p>
+      <span>Made with ☕ & ✨</span>
+    </div>
+
+    <div class="footer-links">
+      <a href="/about">About</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

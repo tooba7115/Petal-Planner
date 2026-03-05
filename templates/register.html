@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register - Planner</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fff2f6;
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .register-container {
+      background: #ffffff;
+      padding: 40px 35px;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    }
+
+    .register-title {
+      text-align: center;
+      font-size: 28px;
+      color: #9b6a70;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: #9b6a70;
+      margin-bottom: 6px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px 12px;
+      font-size: 14px;
+      border: 1px solid #c49aa0;
+      border-radius: 10px;
+      font-family: inherit;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      outline: none;
+      border-color: #9b6a70;
+      box-shadow: 0 0 0 3px rgba(196, 154, 160, 0.1);
+    }
+
+    .error {
+      background: #ffe6e6;
+      color: #c93434;
+      padding: 12px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      border: 1px solid #ffcccc;
+    }
+
+    .register-btn {
+      width: 100%;
+      padding: 10px;
+      background: #c49aa0;
+      color: #fff;
+      border: none;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.2s ease;
+    }
+
+    .register-btn:hover {
+      background: #9b6a70;
+    }
+
+    .switch-auth {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #9b6a70;
+    }
+
+    .switch-auth a {
+      color: #c49aa0;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .switch-auth a:hover {
+      color: #9b6a70;
+    }
+
+    @media (max-width: 480px) {
+      .register-container {
+        max-width: 92vw;
+        padding: 30px 20px;
+      }
+
+      .register-title {
+        font-size: 24px;
+      }
+
+      input, button {
+        min-height: 44px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="register-container">
+    <h1 class="register-title">📝 Create Account</h1>
+
+    {% if error %}
+      <div class="error">{{ error }}</div>
+    {% endif %}
+
+    <form method="POST">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+
+      <div class="form-group">
+        <label for="confirm_password">Confirm Password</label>
+        <input type="password" id="confirm_password" name="confirm_password" required />
+      </div>
+
+      <button type="submit" class="register-btn">Create Account</button>
+    </form>
+
+    <div class="switch-auth">
+      Already have an account? <a href="/login">Login here</a>
+    </div>
+  </div>
+</body>
+</html>

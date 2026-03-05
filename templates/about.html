@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About – My Planner</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='contact_style.css') }}">
+</head>
+<body>
+
+<header class="header">
+  <nav class="nav">
+    <a href="/dashboard" class="brand">
+      <span class="brand-avatar">📝</span>
+      <span class="brand-text">My Planner</span>
+    </a>
+  </nav>
+</header>
+
+<main class="info-page">
+  <div class="info-card">
+
+    <h2 class="info-title">🌸 About My Planner</h2>
+    <p class="info-subtitle">
+      A cozy productivity space made with love
+    </p>
+
+    <div class="info-section">
+      <h3>✨ What is this?</h3>
+      <p>
+        My Planner is a cute productivity web app designed to help you
+        organise tasks, stay motivated, and enjoy planning.
+      </p>
+    </div>
+
+    <div class="info-section">
+      <h3>🎀 Why pixel-themed?</h3>
+      <p>
+        Planning shouldn’t feel stressful. The pixel style makes the
+        experience fun, soft, and approachable.
+      </p>
+    </div>
+
+    <div class="info-section">
+      <h3>☕ Who made this?</h3>
+      <p>
+        This project was created as a personal learning project,
+        built to explore web development while creating something enjoyable to use.
+      </p>
+    </div>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-center">
+    <div class="footer-left">
+      <p>© 2025 My Planner</p>
+      <span>Made with ☕ & ✨</span>
+    </div>
+
+    <div class="footer-links">
+      <a href="/about">About</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy – My Planner</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='contact_style.css') }}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="header">
+  <nav class="nav">
+    <a href="/dashboard" class="brand">
+      <span class="brand-avatar">🔒</span>
+      <span class="brand-text">My Planner</span>
+    </a>
+  </nav>
+</header>
+
+<main class="info-page">
+  <div class="info-card">
+
+    <h2 class="info-title">🔐 Privacy Policy</h2>
+    <p class="info-subtitle">
+      Your data stays yours
+    </p>
+
+    <div class="info-section">
+      <h3>📁 What data is stored?</h3>
+      <p>
+        We store your username, email, tasks, and completion history
+        only to make the app function correctly.
+      </p>
+    </div>
+
+    <div class="info-section">
+      <h3>🛡 Passwords</h3>
+      <p>
+        Passwords are securely hashed using Bcrypt and are never stored
+        in plain text.
+      </p>
+    </div>
+
+    <div class="info-section">
+      <h3>🚫 Third parties</h3>
+      <p>
+        Your data is not shared with any third parties.
+        This app is for educational use only.
+      </p>
+    </div>
+
+    <div class="info-section">
+      <h3>💌 Questions?</h3>
+      <p>
+        If you have any concerns, feel free to use the contact page.
+      </p>
+    </div>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-center">
+    <div class="footer-left">
+      <p>© 2025 My Planner</p>
+      <span>Made with ☕ & ✨</span>
+    </div>
+
+    <div class="footer-links">
+      <a href="/about">About</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
