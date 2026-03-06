@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 from flask_bcrypt import Bcrypt
-import os
+import os, re
 from datetime import datetime
 import sqlite3
 
@@ -129,6 +129,11 @@ def register():
 
         if password != confirm_password:
             return render_template('register.html', error='Passwords do not match')
+        
+        pattern = r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$'
+
+        if not re.match(pattern, password):
+            return render_template("register.html", error = 'Password must be at least 8 characters and include uppercase, lowercase, number and symbol.')
         #checks if passwords match
 
         conn = get_db()
