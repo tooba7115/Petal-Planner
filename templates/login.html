@@ -138,15 +138,15 @@
       <div class="error">{{ error }}</div>
     {% endif %}
 
-    <form method="POST">
+    <form method="POST" autocomplete="off">
       <div class="form-group">
         <label for="username">Username</label>
-        <input type="text" id="username" name="username" required />
+        <input type="text" id="username" name="username" required autocomplete="off"/>
       </div>
 
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" required />
+        <input type="password" id="password" name="password" required autocomplete="new-password" />
       </div>
 
       <button type="submit" class="login-btn">Login</button>
