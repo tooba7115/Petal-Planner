@@ -1,3 +1,15 @@
+:root {
+  --text: #5b3a3a;
+  --glass: rgba(255, 242, 246, 0.85);
+  --border: rgba(196, 154, 160, 0.25);
+  --card: rgba(255, 255, 255, 0.95);
+
+  --accent: #c49aa0;
+  --accent-hover: #9b6a70;
+
+  --link-bg: rgba(255, 255, 255, 0.65);
+}
+
 /* ======================
    CONTACT PAGE (PIXEL)
 ====================== */
@@ -319,4 +331,71 @@
   font-size: 14px;
   color: #6f4c4c;
   line-height: 1.5;
+}
+
+/* ======================
+  HAMBURGER MENU
+====================== */
+
+.hamburger-menu {
+  position: relative;
+}
+
+.hamburger-btn {
+  width: 34px;
+  height: 34px;
+
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--link-bg);
+
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/*Dropdown*/
+
+.dropdown-menu
+{
+  position: relative;
+  right: 0;
+  top: 44px;
+
+  width: 180px;
+  background: var(--card);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  padding: 10px 0;
+  display: none;
+}
+
+.dropdown-menu.show
+{
+  display: block;
+}
+
+.dropdown-user
+{
+  padding: 10px 14px;
+  font-weight: 600;
+  border: 1px solid var(--border);
+}
+
+.dropdown-item
+{
+  display: block;
+  padding: 10px 14px;
+  font-size: 14px;
+}
+
+.dropdown-item:hover
+{
+  background: rgba(196, 154, 160, 0.12);
+}
+
+.dropdown-item.logout
+{
+  color: #9b6a70;
 }
