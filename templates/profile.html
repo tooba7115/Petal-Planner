@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Profile - Planner</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='contact_style.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 <body>
@@ -34,10 +35,6 @@
         🌙
       </button>
 
-      <span class="user-badge">
-            👋 {{ current_user.username }}
-        </span>
-
       <a href="https://www.instagram.com/tooba.__.07" class="social" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-instagram"></i>
       </a>
@@ -48,7 +45,24 @@
         <i class="fab fa-github"></i>
       </a>
 
-      <a href="/logout" class="logout-btn">Logout</a>
+      <div class="hamburger-menu">
+        <button class="hamburger-btn" onclick="toggleMenu()">☰</button>
+
+        <div class="dropdown-menu" id="dropdownMenu">
+          <div class="dropdown-user">
+            👋 {{ current_user.username }}
+          </div>
+
+          <a href="/profile" class="dropdown-item">
+            ⚙️ Settings
+          </a>
+
+          <a href="/logout" class="dropdown-item logout">
+            🚪 Logout
+          </a>
+        </div>
+      </div>
+
     </div>
   </nav>
 </header>
