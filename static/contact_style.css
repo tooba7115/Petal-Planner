@@ -345,35 +345,46 @@
   width: 34px;
   height: 34px;
 
-  border-radius: 999px;
+  border-radius: 50%;
   border: 1px solid var(--border);
   background: var(--link-bg);
 
   cursor: pointer;
   font-size: 16px;
+
+  transition: transform 0.2s ease;
 }
 
 /*Dropdown*/
 
 .dropdown-menu
 {
-  position: relative;
+  position: absolute;
   right: 0;
   top: 44px;
 
-  width: 180px;
-  background: var(--card);
+  width: 200px;
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+
   border-radius: 12px;
   border: 1px solid var(--border);
 
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
   padding: 10px 0;
-  display: none;
+  
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 .dropdown-menu.show
 {
-  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .dropdown-user
@@ -385,14 +396,14 @@
 
 .dropdown-item
 {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
   padding: 10px 14px;
   font-size: 14px;
-}
 
-.dropdown-item:hover
-{
-  background: rgba(196, 154, 160, 0.12);
+  transition: background 0.2s ease;
 }
 
 .dropdown-item.logout
