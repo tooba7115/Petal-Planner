@@ -36,58 +36,53 @@
             
             
             <!-- THEME -->
-             <div class="pixel-field">
+             <div class="accessibility-section">
+
                 <label>Theme</label>
-                <button class="pixel-btn" onclick="applyTheme('light')">
-                    ☀ Light Mode
-                </button>
-                <button class="pixel-btn" onclick="applyTheme('dark')">
-                    🌙 Dark Mode
-                </button>
-            </div>
-            
-            <!-- CONTRAST -->
-             <div class="pixel-field">
+
+                <div class="accessibility-options">
+                    <button onclick="applyTheme('light')" class="access-btn">☀ Light</button>
+                    <button onclick="applyTheme('dark')" class="access-btn">🌙 Dark</button>
+                </div>
+
+                </div>
+
+
+                <div class="accessibility-section">
+
                 <label>Contrast</label>
-                <button class="pixel-btn" onclick="setContrast('normal')">
-                    Normal Contrast
-                </button>
 
-                <button class="pixel-btn" onclick="setContrast('high')">
-                    High Contrast
-                </button>
-            </div>
+                <div class="accessibility-options">
+                    <button onclick="setContrast('normal')" class="access-btn">Normal</button>
+                    <button onclick="setContrast('high')" class="access-btn">High</button>
+                </div>
+
+                </div>
 
 
-            <!-- TEXT SIZE -->
-             <div class="pixel-field">
+                <div class="accessibility-section">
+
                 <label>Text Size</label>
 
-                <button class="pixel-btn" onclick="setTextSize('small')">
-                    A-
-                </button>
+                <div class="accessibility-options">
+                    <button onclick="setTextSize('small')" class="access-btn">A-</button>
+                    <button onclick="setTextSize('medium')" class="access-btn">A</button>
+                    <button onclick="setTextSize('large')" class="access-btn">A+</button>
+                </div>
 
-                <button class="pixel-btn" onclick="setTextSize('medium')">
-                    A
-                </button>
+                </div>
 
-                <button class="pixel-btn" onclick="setTextSize('large')">
-                    A+
-                </button>
-            </div>
-            
-            <!-- MOTION -->
-             
-            <div class="pixel-field">
+
+                <div class="accessibility-section">
+
                 <label>Motion</label>
-                <button class="pixel-btn" onclick="setMotion('normal')">
-                    Normal Motion
-                </button>
-                
-                <button class="pixel-btn" onclick="setMotion('reduce')">
-                    Reduce Motion
-                </button>
-            </div>
+
+                <div class="accessibility-options">
+                    <button onclick="setMotion('normal')" class="access-btn">Normal</button>
+                    <button onclick="setMotion('reduce')" class="access-btn">Reduce</button>
+                </div>
+
+                </div>
         
         </div>
     
@@ -113,6 +108,7 @@
     </footer>
     
     <script src="{{ url_for('static', filename='accessibility.js') }}"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
 
 </body>
 </html>

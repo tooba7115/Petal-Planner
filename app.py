@@ -312,6 +312,11 @@ def privacy():
 def about():
     return render_template('about.html')
 
+@app.route('/settings')
+@login_required
+def settings():
+    return render_template('settings.html')
+
 # API Routes for task management
 @app.route('/api/tasks', methods=['GET'])
 @login_required

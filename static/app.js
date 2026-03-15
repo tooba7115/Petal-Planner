@@ -352,3 +352,42 @@ document.addEventListener("click", function(event) {
     menu.classList.remove("show");
   }
 });
+
+// LOAD ACCESSIBILITY SETTINGS ON EVERY PAGE
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* THEME */
+  const savedTheme = localStorage.getItem("theme")
+  if (savedTheme) {
+    document.documentElement.setAttribute("data-theme", savedTheme)
+  }
+
+  /* CONTRAST */
+  const savedContrast = localStorage.getItem("contrast")
+  if (savedContrast) {
+    document.documentElement.setAttribute("data-contrast", savedContrast)
+  }
+
+  /* TEXT SIZE */
+  const savedTextSize = localStorage.getItem("textSize")
+
+  if (savedTextSize === "small") {
+    document.documentElement.style.fontSize = "14px"
+  }
+
+  if (savedTextSize === "medium") {
+    document.documentElement.style.fontSize = "16px"
+  }
+
+  if (savedTextSize === "large") {
+    document.documentElement.style.fontSize = "18px"
+  }
+
+  /* MOTION */
+  const savedMotion = localStorage.getItem("motion")
+  if (savedMotion) {
+    document.documentElement.setAttribute("data-motion", savedMotion)
+  }
+
+})
