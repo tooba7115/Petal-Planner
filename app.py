@@ -207,7 +207,7 @@ def profile():
         
         if new_password or confirm_new_password:
             cur.execute(
-                "SELECT password FROM users WHERE id = ?"
+                "SELECT password FROM users WHERE id = ?",
                 (current_user.id,)
             )
             stored_password = cur.fetchone()[0]
