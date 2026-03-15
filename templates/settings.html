@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accessibility – My Planner</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='contact_style.css') }}">
+
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/dashboard" class="brand">
+                <span class="brand-avatar">{{ current_user.avatar_emoji }}</span>
+                <span class="brand-text">My Planner</span>
+            </a>
+            <div class="nav-left">
+                <a href="/dashboard" class="nav-link">Home</a>
+                <a href="/create" class="nav-link">Create Task</a>
+                <a href="/history" class="nav-link">History</a>
+            </div>
+            
+            <div class="nav-right">
+                <span class="user-badge">👋 {{ current_user.username }}</span>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="contact-page">
+        <div class="contact-card">
+            <h2 class="contact-title">♿ Accessibility Settings</h2>
+            <p class="contact-subtitle">Customize the planner to suit your needs.</p>
+            
+            
+            <!-- THEME -->
+             <div class="pixel-field">
+                <label>Theme</label>
+                <button class="pixel-btn" onclick="applyTheme('light')">
+                    ☀ Light Mode
+                </button>
+                <button class="pixel-btn" onclick="applyTheme('dark')">
+                    🌙 Dark Mode
+                </button>
+            </div>
+            
+            <!-- CONTRAST -->
+             <div class="pixel-field">
+                <label>Contrast</label>
+                <button class="pixel-btn" onclick="setContrast('normal')">
+                    Normal Contrast
+                </button>
+
+                <button class="pixel-btn" onclick="setContrast('high')">
+                    High Contrast
+                </button>
+            </div>
+
+
+            <!-- TEXT SIZE -->
+             <div class="pixel-field">
+                <label>Text Size</label>
+
+                <button class="pixel-btn" onclick="setTextSize('small')">
+                    A-
+                </button>
+
+                <button class="pixel-btn" onclick="setTextSize('medium')">
+                    A
+                </button>
+
+                <button class="pixel-btn" onclick="setTextSize('large')">
+                    A+
+                </button>
+            </div>
+            
+            <!-- MOTION -->
+             
+            <div class="pixel-field">
+                <label>Motion</label>
+                <button class="pixel-btn" onclick="setMotion('normal')">
+                    Normal Motion
+                </button>
+                
+                <button class="pixel-btn" onclick="setMotion('reduce')">
+                    Reduce Motion
+                </button>
+            </div>
+        
+        </div>
+    
+    </main>
+    
+    <footer class="footer">
+        
+        <div class="footer-center">
+            <div class="footer-left">
+                
+                <p>© 2025 My Planner</p>
+                <span>Made with ☕ & ✨</span>
+            </div>
+            
+            <div class="footer-links">
+                <a href="/about">About</a>
+                <a href="/privacy">Privacy</a>
+                <a href="/contact">Contact</a>
+            </div>
+
+        </div>
+
+    </footer>
+    
+    <script src="{{ url_for('static', filename='accessibility.js') }}"></script>
+
+</body>
+</html>
