@@ -372,22 +372,8 @@ document.addEventListener("DOMContentLoaded", () => {
   /* TEXT SIZE */
   const savedTextSize = localStorage.getItem("textSize")
 
-  if (savedTextSize === "small") {
-    document.documentElement.style.fontSize = "14px"
-  }
-
-  if (savedTextSize === "medium") {
-    document.documentElement.style.fontSize = "16px"
-  }
-
-  if (savedTextSize === "large") {
-    document.documentElement.style.fontSize = "18px"
-  }
-
-  /* MOTION */
-  const savedMotion = localStorage.getItem("motion")
-  if (savedMotion) {
-    document.documentElement.setAttribute("data-motion", savedMotion)
+  if(savedTextSize){
+    document.body.classList.add("text-" + savedTextSize)
   }
 
 })

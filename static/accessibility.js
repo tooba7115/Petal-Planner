@@ -10,22 +10,19 @@ function setContrast(mode) {
 
 function setTextSize(size) {
 
+  document.body.classList.remove("text-small","text-medium","text-large")
+
   if(size === "small"){
-    document.documentElement.style.fontSize = "14px"
+    document.body.classList.add("text-small")
   }
 
   if(size === "medium"){
-    document.documentElement.style.fontSize = "16px"
+    document.body.classList.add("text-medium")
   }
 
   if(size === "large"){
-    document.documentElement.style.fontSize = "18px"
+    document.body.classList.add("text-large")
   }
 
   localStorage.setItem("textSize", size)
-}
-
-function setMotion(mode) {
-  document.documentElement.setAttribute("data-motion", mode)
-  localStorage.setItem("motion", mode)
 }

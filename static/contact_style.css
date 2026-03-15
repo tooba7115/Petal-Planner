@@ -415,13 +415,32 @@
 
 :root[data-contrast="high"] {
 
---text: #000;
---card: #ffffff;
---border: #000;
---accent: #000;
+--text: #000000;
+  --glass: #ffffff;
+  --card: #ffffff;
+  --border: #000000;
 
-background: #ffffff;
+  --accent: #000000;
+  --accent-hover: #333333;
 
+  --link-bg: #ffffff;
+
+}
+
+:root[data-contrast="high"] body {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+:root[data-contrast="high"] .nav,
+:root[data-contrast="high"] .footer {
+  background: #ffffff !important;
+  border-color: #000000 !important;
+}
+
+:root[data-contrast="high"] button,
+:root[data-contrast="high"] .nav-link {
+  border: 2px solid black;
 }
 
 
@@ -471,4 +490,18 @@ transition: none !important;
 .access-btn:hover {
   background: rgba(196,154,160,0.25);
   transform: translateY(-1px);
+}
+
+/* TEXT SIZE ACCESSIBILITY */
+
+.text-small {
+  font-size: 14px;
+}
+
+.text-medium {
+  font-size: 17px;
+}
+
+.text-large {
+  font-size: 21px;
 }
