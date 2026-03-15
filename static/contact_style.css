@@ -410,3 +410,24 @@
 {
   color: #9b6a70;
 }
+
+/* HIGH CONTRAST MODE */
+
+:root[data-contrast="high"] {
+
+--text: #000;
+--card: #ffffff;
+--border: #000;
+--accent: #000;
+
+background: #ffffff;
+
+}
+
+
+/* REDUCE MOTION */
+
+:root[data-motion="reduce"] * {
+animation: none !important;
+transition: none !important;
+}
