@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greenfield Local Hub</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="overlay">
+    
+    <header>
+      <h1>Greenfield Local Hub</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Producers</a>
+        <a href="#">Orders</a>
+
+        <div class="hamburger-menu">
+          <button class="hamburger-btn" onclick="toggleMenu()">☰</button>
+
+          <div class="dropdown-menu" id="dropdownMenu">
+            
+            <a href="#" class="dropdown-item">
+              ⚙️ Profile Settings
+            </a>
+
+            <a href="#" class="dropdown-item logout">
+              🚪 Logout
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+    <section class="hero">
+      <h2>Fresh Food From Local Farmers</h2>
+      <p>Support your community and enjoy fresh, traceable produce.</p>
+      
+      <button class="primary-btn">Browse Products</button>
+      <button class="secondary-btn">Learn More</button>
+    </section>
+
+    <section class="products">
+      <h2>Featured Products</h2>
+      <div class="product-grid">
+        <div class="card">
+          <h3>Organic Tomatoes</h3>
+          <p>Produced by Greenfield Farm</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <div class="card">
+          <h3>Fresh Milk</h3>
+          <p>Produced by Hilltop Dairy</p>
+          <button>Add to Cart</button>
+        </div>
+        
+        <div class="card">
+          <h3>Free Range Eggs</h3>
+          <p>Produced by Meadow Farm</p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    
+    </section>
+    
+    <footer>
+      <p>© Greenfield Local Hub 2026</p>
+    </footer>
+  
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
